@@ -28,6 +28,13 @@ const wixClient = createClient({
     }
   }
 
+  app.get('/', async (res) => {
+    try {
+      res.json("Working server");
+    } catch (error) {
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
 
   app.get('/order-list-management', async (req, res) => {
     try {
