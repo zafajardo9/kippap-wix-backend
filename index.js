@@ -3,6 +3,7 @@ import { orders } from "@wix/pricing-plans";
 import { members } from "@wix/members";
 import express from 'express';
 import dotenv from 'dotenv';
+import compression from 'compression';
 
 dotenv.config();    
 
