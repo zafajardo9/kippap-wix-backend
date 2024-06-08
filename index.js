@@ -81,4 +81,3 @@ const wixClient = createClient({
     console.log(`Server is running on port ${PORT}`);
   });
 
-
