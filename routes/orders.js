@@ -7,8 +7,11 @@ const router = express.Router();
 router.get('/order-list-management', async (req, res) => {
   try {
     const options = {
-      limit: req.query.limit || 30,
+      limit: req.query.limit || 10,
       offset: req.query.offset || 0,
+      orderStatuses: ['ACTIVE', 'PAUSED'],
+      paymentStatuses: ['PAID', 'PENDING'],
+
     };
     const response = await wixClient.orders.managementListOrders(options);
 
