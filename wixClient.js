@@ -1,6 +1,7 @@
 import { createClient, ApiKeyStrategy } from "@wix/sdk";
 import { orders } from "@wix/pricing-plans";
 import { members } from "@wix/members";
+import ImageKit from 'imagekit';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -13,4 +14,11 @@ const wixClient = createClient({
     }),
 });
 
-export { wixClient };
+
+const imagekit = new ImageKit({
+    publicKey: process.env.publicKey,
+    privateKey: process.env.privateKey,
+    urlEndpoint: process.env.urlEndpoint,
+});
+
+export { wixClient, imagekit };
